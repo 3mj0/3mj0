@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider Pages</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Image Slider</h1>
+<img src="image1.jpg" alt="Image 1" class="slide active">
+<img src="image2.jpg" alt="Image 2" class="slide">
+<img src="image3.jpg" alt="Image 3" class="slide">
+<div>
+    <button onclick="prevImage()">Previous</button>
+    <button onclick="nextImage()">Next</button>
+</div>
+<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    function showImage(index) {
+
+        slides.forEach(slide => slide.classList.remove("active"));
+
+        slides[index].classList.add("active");
+    }
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showImage(currentIndex);
+    }
+    function prevImage() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+</script>
+</body>
+</html>

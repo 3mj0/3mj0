@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+</head>
+<body>
+    <form id="myForm" onsubmit="return validateForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+    </form>
+    <p id="message"></p>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById("name").value;
+            const message = document.getElementById("message");
+
+            if (nameInput.trim() === "") {
+                message.textContent = "Error: Space cannot be empty!";
+                message.style.color = "red";
+            } else {
+                message.textContent = "Form Successfully Submitted!";
+                message.style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

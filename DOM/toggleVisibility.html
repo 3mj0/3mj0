@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Toggle Visibility</title>
+</head>
+<body>
+    <p id="toggleText">This can be made to be hidden or shown.</p>
+    <button onclick="toggleParagraph()">Toggle Visibility</button>
+    <script>
+        function toggleParagraph() {
+            const p = document.getElementById("toggleText");
+            p.style.display = (p.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add New Elements</title>
+</head>
+<body>
+    <ul id="itemList"></ul>
+    <button onclick="addNewItem()">Add Item</button>
+    <script>
+        let count = 1;
+
+        function addItem() {
+            const li = document.createElement('li');
+            li.textContent = "Item " + count++;
+            document.getElementById('itemList').appendChild(li);
+        }
+    </script>
+</body>
+</html>
