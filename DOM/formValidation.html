@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form with Stylish Design</title>
+    <style>
+        body {
+            background-color: #121212; 
+            font-family: 'Arial', sans-serif;
+            color: #e0e0e0; 
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+        h1 {
+            color: #ffd700; 
+            margin-bottom: 30px;
+        }
+        input[type="text"],
+        input[type="submit"] {
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 18px;
+            border: 2px solid silver; 
+            border-radius: 5px; 
+            width: 300px; 
+        }
+        input[type="text"] {
+            background-color: #232323; 
+            color: #e0e0e0; 
+        }
+        input[type="submit"] {
+            background-color: #ffd700; 
+            color: black; 
+            cursor: pointer;
+            transition: background-color 0.3s; 
+        }
+        input[type="submit"]:hover {
+            background-color: #e0b000; 
+        }
+        .error {
+            color: darkorange; 
+            margin-top: 10px;
+        }
+        .submitted {
+            background-color: #e6e6fa; 
+            color: black; 
+            padding: 20px;
+            border: 2px solid silver; 
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .hidden {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Stylish Form Submission</h1>
+    <form id="myForm" onsubmit="handleSubmit(event)">
+        <input type="text" id="inputField" placeholder="Enter something..." required>
+        <input type="submit" value="Submit">
+        <p id="errorMessage" class="error hidden"></p>
+    </form>
+    
+    <div id="submittedMessage" class="submitted hidden">
+        Form submitted successfully!
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); 
+            const inputField = document.getElementById("inputField");
+            const errorMessage = document.getElementById("errorMessage");
+            const submittedMessage = document.getElementById("submittedMessage");
+            
+            if (inputField.value.trim() === "") {
+                errorMessage.innerText = "Input cannot be empty.";
+                errorMessage.classList.remove('hidden');
+                submittedMessage.classList.add('hidden'); 
+            } else {
+                errorMessage.classList.add('hidden'); 
+                submittedMessage.classList.remove('hidden'); 
+                inputField.value = ""; 
+            }
+        }
+    </script>
+</body>
+</html>

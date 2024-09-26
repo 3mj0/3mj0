@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0">
+    <title>Add New Elements</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            color: darkpurple;
+            margin: 0;
+            padding: 20px;
+        }
+        #itemList {
+            list-style-type: lower-roman;
+            padding: 0;
+        }
+        li {
+            background-color: rgb(136, 42, 86);
+            border: 1px solid darkpurple;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+            transition: backgrgound-color 0.4s;
+        }
+        li:hover {
+            background-color: lightpink;
+        }
+        button {
+            background-color: darkpurple;
+            color: lightskyblue;
+            border: black;
+            border-radius: 2px;
+            padding: 1px 20px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #be77c6;
+        }
+        .trademark {
+            font-style: italic;
+            color: rgb(67, 134, 134);
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Maggi's Place</h1>
+    <ul id="itemList"></ul>
+    <button onclick="addNewItem()">Add Item</button>
+    <p>Number of Items: <span id="itemCount"></span></p>
+
+    <div class="trademark">Maggi's Place 2024</div>
+    <script>
+        let count = 1;
+        let itemCountElement = document.getElementById('itemCount');
+        function addNewItem() {
+            const li = document.createElement('li');
+            li.textContent = "Item " + count++;
+            document.getElementById('itemList').appendChild(li);
+            
+            itemCountElement.textContent = document.getElementById('itemList').children.length;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Clicks</title>
+    <style>
+        body {
+            background-color: #f7c6d7; 
+            font-family: 'Arial', sans-serif;
+            color: #333; 
+            text-align: center;
+            margin: 0;
+            padding: 50px;
+        }
+        button {
+            background-color: #ff77ab; 
+            color: white; 
+            border: none;
+            border-radius: 25px; 
+            padding: 15px 30px; 
+            font-size: 20px; 
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        button:hover {
+            background-color: #ff4081; 
+            transform: scale(1.05); 
+        }
+        p {
+            margin-top: 30px; 
+            font-size: 24px; 
+            background-color: #90e0ef; 
+            border: 2px solid #00bfff; 
+            border-radius: 15px; 
+            padding: 20px; 
+            display: inline-block; 
+        }
+        span {
+            font-weight: bold; 
+            font-size: 28px; 
+            color: #ff0; 
+        }
+        .trademark {
+            font-style: cursive;
+            color: lightsteelblue;
+        }  
+    </style>
+</head>
+<body>
+    <h1>Welcome to Maggi's Place</h1>
+    <button onclick="countClicks()">Click Me</button>
+    <p>Click Count: <span id="clickCount">0</span></p>
+
+    <div class="trademark">Maggi's Place 2024</div>
+    <script>
+        let clickCount = 0;
+        function countClicks() {
+            clickCount++;
+            document.getElementById("clickCount").innerText = clickCount;
+        }
+    </script>
+</body>
+</html>

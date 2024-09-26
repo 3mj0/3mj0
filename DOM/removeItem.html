@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Item</title>
+    <style>
+        body {
+            background-color: #002147; 
+            font-family: Arial, sans-serif;
+            color: #f8f8f8; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #f1c40f;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none; 
+            padding: 0; 
+            width: 100%;
+            max-width: 400px; 
+            background-color: rgba(255, 255, 255, 0.1); 
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        li {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        li:last-child {
+            border-bottom: none; 
+        }
+        button {
+            background-color: #3498db; 
+            color: white; 
+            border: none;
+            border-radius: 5px; 
+            padding: 8px 12px; 
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        button:hover {
+            background-color: #2980b9; 
+            transform: scale(1.05); 
+        }
+        footer {
+            margin-top: 20px; 
+            color: #f1c40f; 
+            font-size: 14px; 
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Remove Items</h1>
+    <ul id="itemList">
+        <li>Item 1 <button onclick="removeItem(this)">Remove</button></li>
+        <li>Item 2 <button onclick="removeItem(this)">Remove</button></li>
+        <li>Item 3 <button onclick="removeItem(this)">Remove</button></li>
+    </ul>
+    <footer>
+        &copy; 2024 Maggi’s Place 2024.
+    </footer>
+    <script>
+        function removeItem(button) {
+            const li = button.parentElement;
+            li.remove();
+        }
+    </script>
+</body>
+</html>

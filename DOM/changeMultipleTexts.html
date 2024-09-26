@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Change Text Color</title>
+    <style>
+        body {
+            background-color: rgb(15, 15, 62); 
+            font-family: Arial, sans-serif;
+            color: lightpink; 
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .text {
+            margin: 10px 0; 
+            font-size: 14px; 
+        }
+        button {
+            background-color: darkblue; 
+            color: neongreen; 
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Button hover effect */
+        }
+        button:hover {
+            background-color: #8aa76d; /* Lighter neon green on hover */
+        }
+        .trademark {
+            margin-top: 20px;
+            font-style: italic;
+            color: #B2FFFF; /* Super light aqua color for the trademark */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Maggi's Place</h1>
+    <p class="text">Just remember to breathe Maggi!</p>
+    <p class="text">It's all for the greater good... right?!</p>
+    <p class="text">Keep focusing on the end of the line, not now!</p>
+    <button onclick="changeTextColor()">Change Text Color</button>
+    
+    <div class="trademark">Maggi’s Place 2024</div>
+    <script>
+        function changeTextColor() {
+            const paragraphs = document.querySelectorAll(".text");
+            paragraphs.forEach(p => {
+                // Generate a random color
+                const randomColor = '#' + ((1 << 24) + (Math.random() * 0xFFFFFF) | 0).toString(16).slice(1);
+                p.style.color = randomColor;
+            });
+        }
+    </script>
+</body>
+</html>

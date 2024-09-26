@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider Pages</title>
+    <style>
+        body {
+            background-color: #121212; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #f8f8f8;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #ff69b4; 
+            text-align: center;
+        }
+        img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 15px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+            display: none; 
+        }
+        .active {
+            display: block; 
+        }
+        button {
+            background-color: #50c878; 
+            color: white; 
+            border: none;
+            border-radius: 5px; 
+            padding: 10px 20px; 
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px; 
+            transition: background-color 0.3s, transform 0.2s; 
+        }
+        button:hover {
+            background-color: #3da15b; 
+            transform: scale(1.05);
+        }
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            width: 100%; 
+            max-width: 400px; 
+        }
+        .trademark {
+            font-style: italic;
+            color: #3da15b
+        }
+    </style>
+</head>
+<body>
+    <h2>Welcome to Maggi's Place</h2>
+    <h1>Image Slider</h1>
+    <img src="Moon.jpeg" alt="Image 1" class="slide active">
+    <img src="Moon2.jpg" alt="Image 2" class="slide">
+    <img src="Moon3.jpg" alt="Image 3" class="slide">
+    <div class="navigation">
+        <button onclick="prevImage()">Previous</button>
+        <button onclick="nextImage()">Next</button>
+    </div>
+    <div class="trademark">Maggi's Place 2024</div>
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        
+        function showImage(index) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            slides[index].classList.add("active");
+        }
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            showImage(currentIndex);
+        }
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            showImage(currentIndex);
+        }
+        showImage(currentIndex);
+    </script>
+</body>
+</html>
