@@ -1,0 +1,51 @@
+body {
+    font-family: fantasy, sans-serif;
+    background-color: #2e004b;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+h1, p {
+    color: #ff7800;
+}
+
+form {
+    margin: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #ff7800;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e56700;
+}
+
+#weatherCity {
+    font-size: 24px;
+    color: #ff7800
+}
+
+#weather p {
+    font-size: 18px
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #ff7800
+}
